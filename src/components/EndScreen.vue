@@ -1,7 +1,7 @@
 <template>
   <section class="end-screen">
     <h1 class="end-text">
-      {{endText}}
+      {{ endText }}
     </h1>
     <GameButton @click="$emit('new-game')">
       Начать заново
@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import GameButton from '@/components/GameButton.vue'
-import { typeOfEnd } from '@/helpers/types'
+import GameButton from "@/components/GameButton.vue";
+import { typeOfEnd } from "@/helpers/types";
 export default {
   components: {
     GameButton
@@ -21,26 +21,25 @@ export default {
       type: String,
       required: true,
       validator(value) {
-        return Object.values(typeOfEnd).includes(value) 
-      }     
+        return Object.values(typeOfEnd).includes(value);
+      }
     }
   },
   computed: {
     endText() {
-      switch(this.type) {
+      switch (this.type) {
         case typeOfEnd.endWin:
-          return 'Победа'
+          return "Победа";
         case typeOfEnd.endLose:
-          return 'Поражение'
+          return "Поражение";
       }
-      return ''
+      return "";
     }
   }
-}
+};
 </script>
 
 <style scoped>
-
 .end-text {
   text-align: center;
   font-family: Roboto;
@@ -48,7 +47,7 @@ export default {
   font-weight: bold;
   font-size: 48px;
   line-height: 56px;
-  color: #5742D7;
+  color: #5742d7;
   margin-bottom: 100px;
 }
 </style>

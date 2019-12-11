@@ -1,35 +1,35 @@
 <template>
-  <div 
-    id="app"
-    class="tag-game-app"
-  >
+  <div id="app" class="tag-game-app">
     <BeginScreen
       v-if="screenName === typesOfScreen.begin"
       @new-game="onNewGame"
     ></BeginScreen>
-    <GameBox 
+    <GameBox
+      v-else-if="screenName === typesOfScreen.game"
       :seconds-to-end="180"
       @lose="onLose"
       @win="onWin"
-      v-else-if="screenName === typesOfScreen.game"
     />
-    <EndScreen 
-      v-else-if="screenName === typesOfScreen.endLose || screenName === typesOfScreen.endWin"
-      @new-game="onNewGame"
+    <EndScreen
+      v-else-if="
+        screenName === typesOfScreen.endLose ||
+          screenName === typesOfScreen.endWin
+      "
       :type="screenName"
+      @new-game="onNewGame"
     ></EndScreen>
   </div>
 </template>
 
 <script>
-import 'reset-css';
-import GameBox from '@/components/GameBox.vue'
-import BeginScreen from '@/components/BeginScreen.vue'
-import EndScreen from '@/components/EndScreen.vue'
-import { typesOfScreen } from '@/helpers/types'
+import "reset-css";
+import GameBox from "@/components/GameBox.vue";
+import BeginScreen from "@/components/BeginScreen.vue";
+import EndScreen from "@/components/EndScreen.vue";
+import { typesOfScreen } from "@/helpers/types";
 
 export default {
-  name: 'app',
+  name: "App",
   components: {
     GameBox,
     EndScreen,
@@ -38,25 +38,25 @@ export default {
   data() {
     return {
       screenName: typesOfScreen.begin
-    }
+    };
   },
   computed: {
     typesOfScreen() {
-      return typesOfScreen
+      return typesOfScreen;
     }
   },
   methods: {
     onWin() {
-      this.screenName = typesOfScreen.endWin
+      this.screenName = typesOfScreen.endWin;
     },
     onLose() {
-      this.screenName = typesOfScreen.endLose
+      this.screenName = typesOfScreen.endLose;
     },
     onNewGame() {
-      this.screenName = typesOfScreen.game
+      this.screenName = typesOfScreen.game;
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -71,18 +71,18 @@ export default {
 </style>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
-  --main-color: #5742D7;
-  --accent-color: #92F1CF;
-  --light-color: #FFFFFF;
+  --main-color: #5742d7;
+  --accent-color: #92f1cf;
+  --light-color: #ffffff;
 }
 </style>

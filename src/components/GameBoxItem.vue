@@ -1,13 +1,13 @@
 <template>
-  <button 
+  <button
     class="game-box-item"
     :class="{
       'game-box-item_highlight': card.highlight
     }"
-    @click="flip"
     :disabled="disabled"
+    @click="flip"
   >
-    {{ card.opened ? card.value : '?' }}
+    {{ card.opened ? card.value : "?" }}
   </button>
 </template>
 
@@ -21,14 +21,14 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-    },
+    }
   },
   methods: {
     flip() {
-      this.$emit('flip', this.card)
+      this.$emit("flip", this.card);
     }
   }
-}
+};
 </script>
 
 <style scoped>

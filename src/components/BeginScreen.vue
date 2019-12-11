@@ -5,15 +5,13 @@
 </template>
 
 <script>
-import GameButton from '@/components/GameButton.vue'
+import GameButton from "@/components/GameButton.vue";
 
 export default {
   components: {
     GameButton
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

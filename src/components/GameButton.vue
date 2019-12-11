@@ -1,22 +1,16 @@
 <template>
-  <button 
-    type="button"
-    class="game-button"
-    @click="$emit('click')"
-  >
+  <button type="button" class="game-button" @click="$emit('click')">
     <slot></slot>
   </button>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
 .game-button {
-  background: #C2E265;
+  background: #c2e265;
   border-radius: 10px;
   padding: 11px 120px;
   border: none;
@@ -25,6 +19,6 @@ export default {
   font-weight: bold;
   font-size: 36px;
   line-height: 42px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 </style>
