@@ -115,7 +115,6 @@ export default {
     runTimer() {
       this.leftSeconds = this.secondsToEnd;
       const timer = window.setInterval(()=> {
-        this.leftSeconds;
         if(this.leftSeconds === 0) {
           window.clearInterval(timer)
           this.$emit('lose')
