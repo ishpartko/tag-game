@@ -132,17 +132,17 @@ export default {
 .game-box {
   min-width: 320px;
   min-height: 320px;
-  max-width: 380px;
-  max-height: 380px;
+  max-width: 320px;
+  max-height: 320px;
   background: var(--main-color);
 }
 
 .game-box-gap {
-  padding: 10px;
+  padding: 4px;
 }
 
 .game-box-item-gap {
-  margin: 10px;
+  margin: 4px;
 }
 
 .game-box-timer-margin {
@@ -153,6 +153,12 @@ export default {
   .game-box {
     min-width: 380px;
     min-height: 380px;
+  }
+  .game-box-gap {
+    padding: 10px;
+  }
+  .game-box-item-gap {
+    margin: 10px;
   }
 }
 </style>
